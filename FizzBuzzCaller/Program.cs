@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ClearMeasure;
 
 
 namespace FizzBuzzCaller
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            FizzBuzz myFizzBuzz = new FizzBuzz(Int32.MaxValue);
-            IEnumerable<string> fizzBuzzes = myFizzBuzz.GetFizzBuzz();
+            var myFizzBuzz = new FizzBuzz(int.MaxValue);
+            var fizzBuzzes = myFizzBuzz.GetFizzBuzzNums();
 
             foreach (var fizzBuzzOrNum in fizzBuzzes)
             {

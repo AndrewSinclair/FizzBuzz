@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearMeasure", "ClearMeasur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzCaller", "..\FizzBuzzCaller\FizzBuzzCaller.csproj", "{827DDE03-0AE3-4611-AB0A-B6A04DA3A8E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{067456C0-086C-46A8-B37F-1405717B7BFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFizzBuzzProject", "TestFizzBuzzer\TestFizzBuzzProject.csproj", "{067456C0-086C-46A8-B37F-1405717B7BFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,44 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ClearMeasure
 {
     public class FizzBuzz
     {
-        private int _num;
+        private readonly int _num;
+        public List<Tuple<int, string>> NumNamePairs { get; }
 
         public FizzBuzz(int num)
         {
             _num = num;
+            NumNamePairs = new List<Tuple<int, string>>()
+            {
+                new Tuple<int, string>(3, "Fizz"),
+                new Tuple<int, string>(5, "Buzz")
+            };
         }
 
-        private string FizzBuzzNum(int num)
+        public FizzBuzz(int num, List<Tuple<int, string>> numNamePairs)
         {
-            StringBuilder builder = new StringBuilder();
-
-            if (num % 3 == 0)
-            {
-                builder.Append("Fizz");
-            }
-            if (num % 5 == 0)
-            {
-                builder.Append("Buzz");
-            }
-            if (num % 3 != 0 && num % 5 != 0)
-            {
-                builder.Append(num);
-            }
-
-            return builder.ToString();
+            _num = num;
+            NumNamePairs = numNamePairs;
         }
 
-        public IEnumerable<string> GetFizzBuzz()
+        private string GetFizzBuzzNum(int num)
         {
-            for(int i = 1; i <= _num; i++)
+            var divisors = NumNamePairs.FindAll(nnp => num % nnp.Item1 == 0);
+
+            return
+                divisors.Count > 0 ?
+                string.Join(string.Empty, divisors.Select(nnp => nnp.Item2)) :
+                num.ToString();
+        }
+
+        public IEnumerable<string> GetFizzBuzzNums()
+        {
+            for(var i = 1; i <= _num; i++)
             {
-                yield return FizzBuzzNum(i);
+                yield return GetFizzBuzzNum(i);
             }
         }
     }
