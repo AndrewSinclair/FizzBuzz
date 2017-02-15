@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClearMeasure;
 
 
 namespace FizzBuzzCaller
@@ -11,9 +12,15 @@ namespace FizzBuzzCaller
     {
         static void Main(string[] args)
         {
-            string output = ClearMeasure.FizzBuzz.GetFizzBuzz(Int32.MaxValue);
-            Console.WriteLine(output);
-            Console.ReadLine();
+            FizzBuzz myFizzBuzz = new FizzBuzz(Int32.MaxValue);
+            IEnumerable<string> fizzBuzzes = myFizzBuzz.GetFizzBuzz();
+
+            foreach (var fizzBuzzOrNum in fizzBuzzes)
+            {
+                Console.WriteLine(fizzBuzzOrNum);
+            }
+
+            Console.WriteLine("End of Program");
         }
     }
 }

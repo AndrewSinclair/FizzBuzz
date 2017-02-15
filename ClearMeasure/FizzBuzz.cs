@@ -8,12 +8,14 @@ namespace ClearMeasure
 {
     public class FizzBuzz
     {
-        // TODO : Max Value no Memory Overflow
-        // Features: Pass in arbitrary numbers, words combos (as many as they want).
-        // Extra Credit: Build script, Git + CI
+        private int _num;
 
-        // Put it all on Github
-        public static string FizzBuzzNum(int num)
+        public FizzBuzz(int num)
+        {
+            _num = num;
+        }
+
+        private string FizzBuzzNum(int num)
         {
             StringBuilder builder = new StringBuilder();
 
@@ -29,22 +31,16 @@ namespace ClearMeasure
             {
                 builder.Append(num);
             }
-            builder.Append("\n");
 
             return builder.ToString();
         }
 
-        public static string GetFizzBuzz(int upperBound)
+        public IEnumerable<string> GetFizzBuzz()
         {
-
-            StringBuilder builder = new StringBuilder();
-
-            for (int i = 1; i <= upperBound; i++)
+            for(int i = 1; i <= _num; i++)
             {
-                string fizzOrBuzzOrNum = FizzBuzzNum(i);
-                builder.Append(fizzOrBuzzOrNum);
+                yield return FizzBuzzNum(i);
             }
-            return builder.ToString();
         }
     }
 }
