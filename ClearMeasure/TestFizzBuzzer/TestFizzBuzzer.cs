@@ -20,7 +20,7 @@ namespace NUnitTestProject1
         private FizzBuzz _myBaz;
         private IEnumerable<string> _bazes;
 
-        [OneTimeSetUp]
+        [SetUp]
         public void Setup()
         {
             _myFizzerBuzzer = new FizzBuzz(int.MaxValue);
