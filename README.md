@@ -1,5 +1,7 @@
 # FizzBuzz
 
+[![Build Status](https://travis-ci.org/AndrewSinclair/FizzBuzz.svg?branch=master)](https://travis-ci.org/AndrewSinclair/FizzBuzz)
+
 Variations on the FizzBuzz problem, including Unit Tests.
 
 Author: `Andrew Sinclair`
