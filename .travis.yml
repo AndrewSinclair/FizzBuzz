@@ -1,3 +1,9 @@
 language: csharp
 solution: ClearMeasure/ClearMeasure.sln
+install:
+  - nuget restore ClearMeasure/ClearMeasure.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release ClearMeasure/ClearMeasure.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./ClearMeasure/TestFizzBuzzer/bin/Release/NUnitTestProject1.dll
 
