@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using ClearMeasure;
 
 
 namespace FizzBuzzCaller
 {
-    internal class Program
+    public class Program
     {
-        private static void Main()
+        public static void Main()
         {
-            var myFizzBuzz = new FizzBuzz(int.MaxValue);
+            var myFizzBuzz = new FizzBuzz(100, new List<NumberKeywordPair>() { new NumberKeywordPair { Number = 10, Keyword = "Foo"} });
             var fizzBuzzes = myFizzBuzz.GetFizzBuzzNums();
 
             foreach (var fizzBuzzOrNum in fizzBuzzes)
